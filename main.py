@@ -28,7 +28,7 @@ os.makedirs(os.path.join(BASE_DIR, 'outputs/figures'), exist_ok=True)
 # ─────────────────────────────────────────────────────────────────────────────
 
 def run_train(n_samples=2000):
-    from model_training import train_and_evaluate
+    from src.model_training import train_and_evaluate
     model, prep, report = train_and_evaluate(
         n_samples=n_samples,
         save_dir=os.path.join(BASE_DIR, 'models')
@@ -43,11 +43,11 @@ def run_train(n_samples=2000):
 def run_evaluate():
     import json, joblib
     import pandas as pd
-    from data_generator  import generate_dataset
-    from bcs_module      import compute_bcs
-    from preprocessing   import ProfilePreprocessor, prepare_splits, TARGET
-    from model_training  import MODELS
-    from visualization   import generate_all_plots
+    from src.data_generator  import generate_dataset
+    from src.bcsModule import compute_bcs
+    from src.preprocessing   import ProfilePreprocessor, prepare_splits, TARGET
+    from src.model_training  import MODELS
+    from src.visualization   import generate_all_plots
 
     model_dir = os.path.join(BASE_DIR, 'models')
     report_path = os.path.join(model_dir, 'report.json')
@@ -69,7 +69,7 @@ def run_evaluate():
     y_test      = test[TARGET].values
 
     # Re-train all models for ROC comparison
-    from preprocessing import ALL_FEATURES
+    from src.preprocessing import ALL_FEATURES
     _, _, train_df = prepare_splits(df)   # note: using same seed so splits match
     train_df, _, _ = prepare_splits(df)
     X_train        = prep.fit_transform(train_df)
@@ -93,8 +93,8 @@ def run_evaluate():
 
 def run_predict():
     import json, joblib
-    from preprocessing  import ProfilePreprocessor
-    from model_training import predict_profile
+    from src.preprocessing  import ProfilePreprocessor
+    from src.model_training import predict_profile
 
     model_dir  = os.path.join(BASE_DIR, 'models')
     model      = joblib.load(os.path.join(model_dir, 'best_model.pkl'))
@@ -141,7 +141,7 @@ def run_predict():
 # ─────────────────────────────────────────────────────────────────────────────
 
 def run_api():
-    from api import app, load_artefacts
+    from src.api import app, load_artefacts
     load_artefacts()
     app.run(debug=False, host='0.0.0.0', port=5000)
 
@@ -158,7 +158,7 @@ def run_demo():
     model, prep, report = run_train(n_samples=1000)
     run_evaluate()
 
-    from model_training import predict_profile
+    from src.model_training import predict_profile
 
     samples = [
         {   # Genuine-looking profile
