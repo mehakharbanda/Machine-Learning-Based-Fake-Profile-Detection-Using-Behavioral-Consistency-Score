@@ -189,8 +189,5 @@ This project develops a machine learning-based system to detect fake social medi
 ## Author
 
 **Final Semester Project**
-<<<<<<< HEAD
 Department of Computer Science
 =======
-Department of Computer Science
->>>>>>> 0a2fb895f0f98987d7d89095111e824537f51f75
