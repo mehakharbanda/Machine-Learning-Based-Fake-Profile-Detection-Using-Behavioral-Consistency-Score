@@ -1,8 +1,8 @@
-# Work : Copyright Submission
 # Title : Machine Learning–Based Fake Profile Detection Using Behavioral Consistency Score
-# Authors : Shriya Seth, Mehak Kharbanda, Sargam Narang
-# Roll Numbers : 2201992353, 2210990574, 2210992259
-# Current Status : Unpublished
+- **Work : Copyright Submission**
+- **Authors : Shriya Seth, Mehak Kharbanda, Sargam Narang**
+- **Roll Numbers : 2201992353, 2210990574, 2210992259**
+- **Current Status : Unpublished**
 
 A full-stack machine learning system that detects fake social media profiles by computing a **Behavioral Consistency Score (BCS)** from user activity patterns.
 
@@ -186,8 +186,8 @@ This project develops a machine learning-based system to detect fake social medi
 
 ---
 
-## Author
 
-**Final Semester Project**
-Department of Computer Science
+
+## **Final Semester Project**
+## **Department of Computer Science**
 =======
