@@ -7,7 +7,13 @@
 A full-stack machine learning system that detects fake social media profiles by computing a **Behavioral Consistency Score (BCS)** from user activity patterns.
 
 ---
+---
 
+## Deploy Link
+
+**https://ml-fake-profile-detection-using-bcs.onrender.com
+
+---
 ## Project Structure
 
 ```
